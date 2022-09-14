@@ -2,10 +2,38 @@
 use_default_settings: true
 server:
   # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
-  secret_key: "ultrasecretkey"  # change this!
-  limiter: true  # can be disabled for a private instance
+  secret_key: "298054134ec353807a232b6605406e6190624667c6f2f73e05aabe27c4ef972d" # SawyersSuperS3cRetPasswordForS3CurUreSearxSearchEngine|$(openssl rand -hex 32)
+  limiter: false  # can be disabled for a private instance
   image_proxy: true
+  default_http_headers:
+    X-Content-Type-Options : nosniff
+    X-XSS-Protection : 1; mode=block
+    X-Download-Options : noopen
+    X-Robots-Tag : noindex, nofollow
+    Referrer-Policy : no-referrer
 ui:
   static_use_hash: true
+  default_locale: ""
+  query_in_title: false
+  infinite_scroll: true
+  center_alignment: false
+  default_theme: simple
+  theme_args:
+    simple_style: dark
+  results_on_new_tab: true
 redis:
   url: redis://redis:6379/0
+general:
+  debug: false
+  instance_name:  "SawyerSearch"
+  privacypolicy_url: false
+  contact_url: false
+  enable_metrics: false
+search:
+  safe_search: 0
+  autocomplete: "duckduckgo"
+  default_lang: ""
+  ban_time_on_fail: 5
+  max_ban_time_on_fail: 120
+  formats:
+    - html
