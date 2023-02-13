@@ -3,7 +3,7 @@ use_default_settings: false
 
 server:
   # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
-  secret_key: "298054134ec353807a232b6605406e6190624667c6f2f73e05aabe27c4ef972d" # SawyersSuperS3cRetPasswordForS3CurUreSearxSearchEngine|$(openssl rand -hex 32)
+  secret_key: "KeyHere" 
   limiter: false  # can be disabled for a private instance
   image_proxy: true
   default_http_headers:
