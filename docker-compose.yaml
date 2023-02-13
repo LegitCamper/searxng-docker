@@ -17,6 +17,7 @@ services:
       - ALL
     cap_add:
       - NET_BIND_SERVICE
+      - DAC_OVERRIDE
 
   redis:
     container_name: redis
@@ -42,6 +43,8 @@ services:
      - "127.0.0.1:8080:8080"
     volumes:
       - ./searxng:/etc/searxng:rw
+      - ./searx-extras-by-me/favicon.png:/usr/local/searxng/searx/static/themes/simple/img/favicon.png
+      - ./searx-extras-by-me/favicon.svg:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
     cap_drop:
@@ -50,11 +53,13 @@ services:
       - CHOWN
       - SETGID
       - SETUID
+      - DAC_OVERRIDE
     logging:
       driver: "json-file"
       options:
         max-size: "1m"
         max-file: "1"
+
 networks:
   searxng:
     ipam:
