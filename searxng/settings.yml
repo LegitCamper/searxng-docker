@@ -46,12 +46,13 @@ search:
 
 categories_as_tabs:
   general:
+  GPT:
   images:
   videos:
   news:
   map:
   music:
-  it:
+  IT:
   science:
   files:
   social media:
@@ -61,6 +62,7 @@ engines:
   - name: chatgpt
     engine: chatgpt
     shortcut: cgpt
+    categories: GPT
     USERNAME: 'xxxxx@hotmail.com'  # required!
     PASSWORD: 'xxxxxx'  # required!
     TOKEN_CACHE: 'do not change this!'
