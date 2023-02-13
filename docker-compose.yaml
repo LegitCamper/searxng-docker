@@ -43,9 +43,9 @@ services:
      - "127.0.0.1:8080:8080"
     volumes:
       - ./searxng:/etc/searxng:rw
-      - ./searx-extras-by-me/favicon.png:/usr/local/searxng/searx/static/themes/simple/img/favicon.png
-      - ./searx-extras-by-me/favicon.svg:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg
-      - ./searx-extras-by-me/searx/engines/chatgpt.py:/usr/local/searxng/searx/engines/chatgpt.py
+      - ./searx-extras-by-me/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
+      - ./searx-extras-by-me/searxng.svg:/usr/local/searxng/searx/static/themes/simple/img/searxng.svg
+      # - ./searx-extras-by-me/searx/engines/chatgpt.py:/usr/local/searxng/searx/engines/chatgpt.py
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
     cap_drop:
